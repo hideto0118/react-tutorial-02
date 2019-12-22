@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default class Layout extends React.Component {
-  //constructor
+  //constructor with state
   constructor() {
     super();
     this.petName = "Buchi🐶";
@@ -15,15 +15,19 @@ export default class Layout extends React.Component {
     let name = "Hideto";
     let components = [<Header />, <Footer />];
     
-    setTimeout(
-      () => { this.setState({name: "Hello"}); }
-      , 1000);
+    //state set
+    // setTimeout(
+    //   () => { this.setState({name: "Hello"}); }
+    //   , 1000);
+
+    // props
+    const title = "Welcome Hideto";
 
     return (
       //can you write variables here?
       <div>
-        <Header />
-        <Header />
+        <Header title={title} />
+        <Header title={"another title"} />
         <hr />
         <div>
           <h1>This is state name git{this.state.name}</h1>
